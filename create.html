@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Nhúng style css bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Nhúng font icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CD6fR0KFqK+SSOENPz61Yf2C+Xh183f9Jc4GgGgGgGgGg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Clients</title>
+    <!-- CSS thêm vào -->
+    <style>
+      :root {
+        --header-height: 60px;
+        --sidebar-width: 250px;
+      }
+
+      .main-wrapper {
+        height: calc(100vh - var(--header-height));
+        overflow: hidden;
+      }
+
+      .sidebar {
+        width: var(--sidebar-width);
+        flex-shrink: 0;
+        overflow-y: auto;
+      }
+
+      .main-content {
+        overflow-y: auto;
+        width: 100%;
+      }
+
+      .table {
+        font-size: 13px !important;
+      }
+
+      @media (max-width: 767.98px) {
+        .sidebar {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- top navbar-->
+    <nav
+      class="navbar navbar-expand-lg bg-white shadow-sm sticky-top px-3"
+      style="height: 100px"
+    >
+      <div class="container-fluid">
+        <!-- tạo logo -->
+        <a
+          class="navbar-brand d-flex flex-column align-items-center text-center mt-4"
+          href="#"
+        >
+          <img
+            src="./img/Logo-DH-Cong-Nghe-Thong-Tin-UIT.img"
+            alt="logouit"
+            width="70px"
+            class="rounded"
+          />
+          <p class="text-decoration-none fw-bold col text-primary">UIT Group</p>
+        </a>
+        <!-- phần tùy chọn góc trên bên phải -->
+        <ul class="navbar-nav ms-auto flex-row align-items-center">
+          <li class="nav-item me-3 text-dark">
+            <span class="font-weight-bold">danntt</span>
+            <!--PHẦN NÀY LINK SANG USER ĐĂNG NHẬP ví dụ là user danntt-->
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3"
+              href="#"
+            >
+              <i class="fas fa-cog me-1"></i> Cài đặt
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Tạo MAIN CONTENT chứa leftbar, bảng tìm kiếm và kết quả tìm kiếm -->
+    <div class="d-flex main-wrapper">
+      <!-- LEFT NAVBAR -->
+      <div class="sidebar bg-light p-3 border-end d-none d-md-block">
+        <nav class="nav flex-column mt-3">
+          <!-- Trang chủ -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./home.html"
+          >
+            <i class="fas fa-home me-2"></i> Trang chủ
+          </a>
+          <!-- Tạo lập Khách hàng/Hợp đồng mới -->
+          <a
+            class="nav-link active text-primary bg-primary-subtle rounded-3 mb-1"
+            aria-current="page"
+            href="./home.html"
+          >
+            <i class="fas fa-pen-to-square me-2"></i> Tạo lập
+          </a>
+          <!-- Dự án -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./projects.html"
+          >
+            <i class="fas fa-suitcase me-2"></i> Dự án
+          </a>
+          <!-- Căn hộ -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./apartments.html"
+          >
+            <i class="fas fa-folder me-2"></i> Căn hộ
+          </a>
+          <!-- Khách hàng -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./clients.html"
+          >
+            <i class="fas fa-user-friends me-2"></i> Khách hàng
+          </a>
+          <!-- Hợp đồng -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./contracts.html"
+          >
+            <i class="fas fa-file me-2"></i> Hợp đồng
+          </a>
+          <!-- Trợ giúp -->
+          <a
+            class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
+            href="./bot_ai.html"
+          >
+            <i class="fas fa-question-circle me-2"></i> Trợ giúp
+          </a>
+        </nav>
+      </div>
+      <!-- BẢNG TÌM KIẾM VÀ KẾT QUẢ TÌM KIẾM -->
+      <main class="main-content p-4 bg-light">
+        <div class="container-fluid p-0">
+          <!-- PHẦN NHẬP THÔNG TIN -->
+
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h5 class="card-title text-primary border-bottom pb-2 mb-4">
+                Nhập thông tin
+              </h5>
+
+              <form>
+                <div class="row g-4">
+                  <!-- NHẬP THÔNG KHÁCH HÀNG -->
+                  <div class="col-md-6">
+                    <!-- Họ tên -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Họ tên</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="hoTen"
+                          placeholder="Nhập họ tên..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- SĐT -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >SĐT</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="sđt"
+                          placeholder="Nhập số điện thoại..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- CCCD -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >CCCD</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="cccd"
+                          placeholder="Nhập CCCD..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Ngày sinh -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Ngày sinh</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="date"
+                          class="form-control form-control-sm rounded"
+                          name="ngaySinh"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Địa chỉ -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Địa chỉ</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="diaChi"
+                          placeholder="Nhập địa chỉ..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Email</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="email"
+                          class="form-control form-control-sm rounded"
+                          name="email"
+                          placeholder="Nhập email..."
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ==================== CỘT PHẢI: HỢP ĐỒNG ==================== -->
+                  <div class="col-md-6">
+                    <!-- Ngày hợp đồng -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Ngày hợp đồng</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="date"
+                          class="form-control form-control-sm rounded"
+                          name="ngayHopDong"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Mã dự án -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Mã dự án</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="maDuAn"
+                          placeholder="Nhập mã dự án..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Mã căn hộ -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Mã căn hộ</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="maCanHo"
+                          placeholder="Nhập mã căn hộ..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Mã khách hàng -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Mã khách hàng</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="maKhachHang"
+                          placeholder="Nhập mã khách hàng..."
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Mã nhân viên -->
+                    <div class="row mb-3 align-items-center">
+                      <label class="col-4 col-form-label text-md-end"
+                        >Mã nhân viên</label
+                      >
+                      <div class="col-8">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm rounded"
+                          name="maNhanVien"
+                          placeholder="Nhập mã nhân viên..."
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ========= BUTTON ========= -->
+                <div class="text-center mt-3">
+                  <button
+                    type="button"
+                    class="btn btn-primary rounded-pill px-4 shadow-sm"
+                  >
+                    <i class="fas fa-save me-2"></i> Lưu thông tin
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- PHẦN KHÁCH HÀNG VỪA TẠO-->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary border-bottom pb-2 mb-3">
+                Khách hàng
+              </h5>
+              <div class="table-responsive">
+                <table
+                  class="table table-hover table-striped table-bordered align-middle"
+                >
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Mã khách hàng</th>
+                      <th scope="col">Họ tên</th>
+                      <th scope="col">CCCD</th>
+                      <th scope="col">Ngày sinh</th>
+                      <th scope="col" style="min-width: 250px">Địa chỉ</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Mã HĐ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!--PHẦN NÀY LÀ VÍ DỤ CHO MỘT KHÁCH HÀNG, KHI LINK SANG THÌ PHẢI XÓA ĐI-->
+                      <th scope="row">1</th>
+                      <td>003977</td>
+                      <td>Trần Thạch</td>
+                      <td>030160206869</td>
+                      <td>25/04/1960</td>
+                      <td>52/51/1 Long Minh, P.Tân Hòa, TP.HCM</td>
+                      <td>thach.tran60@gmail.com</td>
+                      <td>
+                        <a href="#" class="text-decoration-none fw-bold"
+                          >HDDC3645</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- PHẦN HỢP ĐỒNG VỪA TẠO -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary border-bottom pb-2 mb-3">
+                Hợp đồng
+              </h5>
+              <div class="table-responsive">
+                <table
+                  class="table table-hover table-striped table-bordered align-middle"
+                >
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col ">Mã hợp đồng</th>
+                      <th scope="col ">Ngày hợp đồng</th>
+                      <th scope="col">Mã dự án</th>
+                      <!--LINK SANG TAB DỰ ÁN-->
+                      <th scope="col">Mã căn hộ</th>
+                      <!--LINK SANG TAB CĂN HỘ-->
+                      <th scope="col">Mã khách hàng</th>
+                      <!--LINK SANG TAB KHÁCH HÀNG-->
+                      <th scope="col">Trạng thái</th>
+                      <th scope="col">Giá trị hợp đồng (VND)</th>
+                      <th scope="col">Số tiền đã tt (VND)</th>
+                      <th scope="col">Đợt tt</th>
+                      <th scope="col">Ngày đến hạn tt</th>
+                      <th scope="col">Mã nhân viên</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!--PHẦN NÀY LÀ VÍ DỤ CHO MỘT HỢP ĐỒNG, KHI LINK SANG THÌ PHẢI XÓA ĐI-->
+                      <th scope="row">1</th>
+                      <td>HDDC3645</td>
+                      <td>15/11/2025</td>
+                      <td>
+                        <a href="#" class="text-decoration-none fw-bold"
+                          >CITD1</a
+                        >
+                      </td>
+                      <td>
+                        <a href="#" class="text-decoration-none fw-bold"
+                          >B29-02</a
+                        >
+                      </td>
+                      <td>
+                        <a href="#" class="text-decoration-none fw-bold"
+                          >003977</a
+                        >
+                      </td>
+                      <td>Hợp đồng đặt cọc</td>
+                      <td>3.536.192.765</td>
+                      <td>176.809.638</td>
+                      <td></td>
+                      <td>15/12/2025</td>
+                      <td>030195</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Nhúng style js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
