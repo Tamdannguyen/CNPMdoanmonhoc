@@ -46,7 +46,9 @@
           <li class="nav-item me-3 text-dark">
             <span class="font-weight-bold"></span>
             <!--PHẦN NÀY LINK SANG USER ĐĂNG NHẬP ví dụ là user danntt-->
-         <!-- TẠO PHẦN DROPDOWN PHẦN CÀI ĐẶT, ĐỂ ĐƠN GIẢN THÌ CHỈ CHO ĐỔI MẬT KHẨU VÀ ĐĂNG XUẤT -->
+            <!-- TẠO PHẦN DROPDOWN PHẦN CÀI ĐẶT, ĐỂ ĐƠN GIẢN THÌ CHỈ CHO ĐỔI MẬT KHẨU VÀ ĐĂNG XUẤT -->
+          </li>
+
           <li class="nav-item dropdown">
             <a
               class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3 dropdown-toggle"
@@ -84,7 +86,7 @@
           <!-- Trang chủ -->
           <a
             class="nav-link text-secondary hover-bg-light rounded-3 mb-1"
-            href="./home.html"
+            href="./index.html"
           >
             <i class="fas fa-home me-2"></i> Trang chủ
           </a>
@@ -301,80 +303,79 @@
     </div>
 
     <!-- ĐỔI MẬT KHẨU -->
-     <!-- MODAL ĐỔI MẬT KHẨU -->
-<div
-  class="modal fade"
-  id="changePasswordModal"
-  tabindex="-1"
-  aria-labelledby="changePasswordModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content rounded-4 shadow">
+    <!-- MODAL ĐỔI MẬT KHẨU -->
+    <div
+      class="modal fade"
+      id="changePasswordModal"
+      tabindex="-1"
+      aria-labelledby="changePasswordModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="changePasswordModalLabel">
+              <i class="fas fa-key me-2"></i> Đổi mật khẩu
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
 
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="changePasswordModalLabel">
-          <i class="fas fa-key me-2"></i> Đổi mật khẩu
-        </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-        ></button>
-      </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Mật khẩu hiện tại:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="oldPassword"
+                placeholder="Nhập mật khẩu cũ"
+              />
+            </div>
 
-      <div class="modal-body">
-        <div class="mb-3">
-          <label class="form-label">Mật khẩu hiện tại:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="oldPassword"
-            placeholder="Nhập mật khẩu cũ"
-          />
+            <div class="mb-3">
+              <label class="form-label">Mật khẩu mới:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="newPassword"
+                placeholder="Nhập mật khẩu mới"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Xác nhận mật khẩu mới:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                placeholder="Nhập lại mật khẩu mới"
+              />
+            </div>
+
+            <small class="text-muted">
+              Mật khẩu phải chứa tổi thiểu 6 ký tự, gồm tối thiểu 1 chữ hoa, 1
+              chữ thường, 1 số và 1 ký tự đặc biệt.
+            </small>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Hủy
+            </button>
+            <button type="button" class="btn btn-primary" id="savePasswordBtn">
+              Lưu thay đổi
+            </button>
+          </div>
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">Mật khẩu mới:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="newPassword"
-            placeholder="Nhập mật khẩu mới"
-          />
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Xác nhận mật khẩu mới:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="confirmPassword"
-            placeholder="Nhập lại mật khẩu mới"
-          />
-        </div>
-
-        <small class="text-muted">
-          Mật khẩu phải chứa tổi thiểu 6 ký tự, gồm tối thiểu 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt.
-        </small>
       </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          Hủy
-        </button>
-        <button type="button" class="btn btn-primary" id="savePasswordBtn">
-          Lưu thay đổi
-        </button>
-      </div>
-
     </div>
-  </div>
-</div>
     <!-- Nhúng style js bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

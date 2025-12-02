@@ -54,5 +54,5 @@ Số lần sai: ${failCount}/${MAX_FAIL}`
   }
 
   alert("Đăng nhập thành công!");
-  window.location.href = "home.html";
+  window.location.href = "index.html";
 });
